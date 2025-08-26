@@ -16,7 +16,7 @@ export const Menu = () => {
 
   return (
     <div
-      className="sticky top-5 mx-auto mt-5 
+      className="sticky top-5 mx-auto  
       flex items-center justify-between px-6 py-4 
       rounded-full backdrop-blur-md bg-white/10 shadow-lg w-[90%] md:w-fit"
     >
