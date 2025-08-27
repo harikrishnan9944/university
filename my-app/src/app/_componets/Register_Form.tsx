@@ -2,7 +2,7 @@
 
 import { useFormik } from "formik";
 import { RegisterSchema } from "../validation_schema/Register_Form";
-
+import axios from "axios";
 export default function Register_Form() {
   const formik = useFormik({
     initialValues: {
@@ -20,9 +20,12 @@ export default function Register_Form() {
       events: [] as string[],
     },
     validationSchema: RegisterSchema,
-    onSubmit: (values, { resetForm }) => {
-      console.log("Form submitted:", values);
-      resetForm();
+    onSubmit: async (values, { resetForm }) => {
+      try {
+        const res = await axios.post("/api/form", values);
+        console.log(res.data);
+        resetForm()
+      } catch (error) {}
     },
   });
 
@@ -38,7 +41,7 @@ export default function Register_Form() {
           Student Registration Form
         </h2>
 
-        {/* First, Middle, Last Name */}
+ 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
             <input
@@ -76,7 +79,7 @@ export default function Register_Form() {
           </div>
         </div>
 
-        {/* Gender */}
+        
         <div>
           <label className="block text-gray-300 font-medium mb-2">Gender</label>
           <div className="flex gap-6">
@@ -102,7 +105,7 @@ export default function Register_Form() {
           )}
         </div>
 
-        {/* DOB, Contact, Email */}
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
             <input
@@ -144,7 +147,6 @@ export default function Register_Form() {
           </div>
         </div>
 
-        {/* College, Department, Year, Roll No */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div>
             <input
@@ -200,7 +202,7 @@ export default function Register_Form() {
           </div>
         </div>
 
-        {/* Events */}
+        
         <div>
           <label className="block text-gray-300 font-medium mb-2">Events</label>
           <div className="flex flex-wrap gap-6">
@@ -226,7 +228,7 @@ export default function Register_Form() {
           )}
         </div>
 
-        {/* Submit */}
+    
         <button
           type="submit"
           disabled={formik.isSubmitting}
