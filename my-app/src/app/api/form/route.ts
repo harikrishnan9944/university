@@ -15,7 +15,6 @@ export async function POST(req: Request) {
     if (email_existing && roll_no_existing) {
       return NextResponse.json(
         { success: false, message: "Email Or Roll_number already exists" }
-        // { status: 400 }
       );
     }
 
