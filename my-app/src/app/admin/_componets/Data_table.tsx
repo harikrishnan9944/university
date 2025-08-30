@@ -3,7 +3,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { Trash2, Pencil, Plus } from "lucide-react";
+import { Trash2, Pencil, Plus, Download } from "lucide-react";
+import * as XLSX from "xlsx";
+import { saveAs } from "file-saver";
 
 function Data_table() {
   const [data, setData] = useState<any[]>([]);
@@ -50,6 +52,33 @@ function Data_table() {
     Object.values(item).join(" ").toLowerCase().includes(search.toLowerCase())
   );
 
+  // ✅ Download function
+  const handleDownload = () => {
+    const exportData = filteredData.map((item) => ({
+      Name: `${item.firstName} ${item.lastName}`,
+      Email: item.email,
+      Contact: item.contact,
+      College: item.college,
+      Year: item.year,
+      "Date & Time": item.createdAt ? formatDateTime(item.createdAt) : "—",
+    }));
+
+    const worksheet = XLSX.utils.json_to_sheet(exportData);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Students");
+
+    const excelBuffer = XLSX.write(workbook, {
+      bookType: "xlsx",
+      type: "array",
+    });
+
+    const dataBlob = new Blob([excelBuffer], {
+      type: "application/octet-stream",
+    });
+
+    saveAs(dataBlob, "Registered_Students.xlsx");
+  };
+
   return (
     <div className="min-h-screen bg-gray-100 p-4 sm:p-6">
       <div className="max-w-7xl mx-auto bg-white p-4 sm:p-6 rounded-xl shadow-lg">
@@ -60,9 +89,13 @@ function Data_table() {
           </h2>
 
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-            <button className="bg-blue-500 py-1 px-1 rounded text-white cursor-pointer" onClick={fetchData}>
-                refresh
+            <button
+              className="bg-blue-500 py-1 px-2 rounded text-white cursor-pointer"
+              onClick={fetchData}
+            >
+              Refresh
             </button>
+
             <input
               type="text"
               placeholder="Search..."
@@ -70,6 +103,14 @@ function Data_table() {
               onChange={(e) => setSearch(e.target.value)}
               className="w-full sm:w-64 p-2 sm:p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
             />
+
+            <button
+              onClick={handleDownload}
+              className="flex items-center justify-center gap-1 px-3 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+            >
+              <Download size={18} />
+              Download
+            </button>
 
             <Link
               href="/admin/adduser"

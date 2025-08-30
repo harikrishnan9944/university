@@ -12,6 +12,7 @@
     "axios": "^1.11.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "file-saver": "^2.0.5",
     "formik": "^2.4.6",
     "lucide-react": "^0.542.0",
     "magical-ui": "^1.0.0",
@@ -27,6 +28,7 @@
     "tsparticles-basic": "^2.12.0",
     "tsparticles-engine": "^2.12.0",
     "tsparticles-slim": "^2.12.0",
+    "xlsx": "^0.18.5",
     "yup": "^1.7.0"
   },
   "devDependencies": {
