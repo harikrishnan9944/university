@@ -1,48 +1,68 @@
 import Image from "next/image";
-import { FileText, Box, Code, HelpCircle, Hammer, Image as ImageIcon } from "lucide-react"; // Lucide icons
+import Link from "next/link";
+import {
+  FileText,
+  Box,
+  Code,
+  HelpCircle,
+  Hammer,
+  Image as ImageIcon,
+} from "lucide-react"; // Lucide icons
 import robbot from "../../../public/robbot.jpg";
 
 const events = [
   {
+    id: "paper-presentation",
     title: "Paper Presentation",
     description:
       "Students showcase research, innovative ideas, and technical knowledge through papers, judged for creativity and clarity.",
     image: robbot,
+    link: "/event#paper-presentation",
     icon: FileText,
   },
   {
+    id: "project-expo",
     title: "Project Expo",
     description:
       "Exhibit innovative projects and prototypes that solve real-world problems with creativity.",
     image: robbot,
+    link: "/event#coding-hackathon",
     icon: Box,
   },
   {
+    id: "coding-contest",
     title: "Coding Contest",
     description:
       "Competitive coding challenge testing problem-solving skills, logic, and speed.",
     image: robbot,
+    link: "/event#robotics-challenge",
     icon: Code,
   },
   {
+    id: "quiz-competition",
     title: "Quiz Competition",
     description:
       "Engaging quiz event testing technical knowledge and quick thinking.",
     image: robbot,
+    link: "/event#quiz-competition",
     icon: HelpCircle,
   },
   {
+    id: "workshop",
     title: "Workshop",
     description:
       "Interactive sessions where experts share practical knowledge and emerging tech.",
     image: robbot,
+    link: "/event#workshop",
     icon: Hammer,
   },
   {
+    id: "poster-presentation",
     title: "Poster Presentation",
     description:
       "Students visually represent innovative ideas and research using posters.",
     image: robbot,
+    link: "/event#poster-presentation",
     icon: ImageIcon,
   },
 ];
@@ -58,9 +78,10 @@ export default function Events() {
           {events.map((event, index) => {
             const Icon = event.icon;
             return (
-              <div
+              <Link
                 key={index}
-                className="bg-gray-900 border border-gray-700 p-4 rounded-xl shadow-lg flex flex-col hover:scale-105 transition-transform duration-300"
+                href={event.link}
+                className="group bg-gray-900 border border-gray-700 p-4 rounded-xl shadow-lg flex flex-col hover:scale-105 transition-transform duration-300"
               >
                 <Image
                   src={event.image}
@@ -71,7 +92,7 @@ export default function Events() {
                   className="rounded-lg object-cover mb-3"
                 />
                 <div className="flex items-center gap-2">
-                  <Icon className="w-5 h-5 text-pink-400" />
+                  <Icon className="w-5 h-5 text-pink-400 group-hover:text-purple-400 transition-colors" />
                   <h2 className="text-lg font-extrabold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
                     {event.title}
                   </h2>
@@ -79,7 +100,7 @@ export default function Events() {
                 <p className="text-gray-300 text-sm mt-2 leading-relaxed text-justify">
                   {event.description}
                 </p>
-              </div>
+              </Link>
             );
           })}
         </div>

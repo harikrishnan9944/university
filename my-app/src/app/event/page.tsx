@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-// import { BorderBeam } from "@/components/magicui/border-beam";
 import { useRouter } from "next/navigation";
 import ParticlesBackground from "../_componets/ParticlesBackground";
 
@@ -24,7 +23,7 @@ export default function Event_Card() {
       id: "coding-hackathon",
       title: "Coding Hackathon",
       sub_title: "Solve real-world problems in an intense coding battle.",
-      bg_image_url: "/coding.jpg",
+      bg_image_url: "/robbot.jpg",
       prizes: ["₹25,000", "₹15,000", "₹10,000"],
       description:
         "A 24-hour coding marathon where participants develop innovative solutions for given problem statements.",
@@ -35,7 +34,7 @@ export default function Event_Card() {
       id: "robotics-challenge",
       title: "Robotics Challenge",
       sub_title: "Build and compete with your own robots 🤖",
-      bg_image_url: "/robotics.jpg",
+      bg_image_url: "/robbot.jpg",
       prizes: ["₹15,000", "₹7,500", "₹5,000"],
       description:
         "Teams design and build robots to complete specific tasks within time constraints.",
@@ -46,7 +45,7 @@ export default function Event_Card() {
       id: "quiz-competition",
       title: "Quiz Competition",
       sub_title: "Test your knowledge and win exciting prizes!",
-      bg_image_url: "/quiz.jpg",
+      bg_image_url: "/robbot.jpg",
       prizes: ["₹5,000", "₹3,000", "₹1,000"],
       description:
         "A thrilling quiz covering science, tech, and general knowledge. Compete in teams of 2.",

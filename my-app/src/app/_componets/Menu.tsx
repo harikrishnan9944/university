@@ -6,12 +6,12 @@ export const Menu = () => {
   const [open, setOpen] = useState(false);
 
   const menu = [
-    { name: "Product", link: "/product" },
+    { name: "Event", link: "/event" },
     { name: "About", link: "/about" },
-    { name: "Community", link: "/community" },
+    // { name: "Coordinators", link: "/Coordinators" },
     { name: "Location", link: "/location" },
     { name: "Schedule", link: "/schedule" },
-    { name: "Programs", link: "/programs" },
+    { name: " Register", link: "/register" },
   ];
 
   return (
