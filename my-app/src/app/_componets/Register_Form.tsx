@@ -35,7 +35,7 @@ export default function Register_Form() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black text-white p-6">
       <form
         onSubmit={formik.handleSubmit}
-        className="bg-gray-950/80 backdrop-blur-md border border-gray-800 p-8 rounded-2xl shadow-2xl w-full max-w-3xl space-y-6"
+        className="bg-gray-950/80 shadow-[0_0_25px_rgba(34,197,94,0.7)] backdrop-blur-md border border-gray-800 p-8 rounded-2xl  w-full max-w-3xl space-y-6"
       >
         <h2 className="text-3xl font-bold text-center bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
           Student Registration Form
@@ -232,7 +232,7 @@ export default function Register_Form() {
         <button
           type="submit"
           disabled={formik.isSubmitting}
-          className="w-full bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white font-semibold py-3 rounded-lg transition duration-300 shadow-lg"
+          className="w-full bg-gradient-to-r from-blue-600 hover:scale-100  hover:shadow-[0_0_25px_rgba(34,197,94,0.7)] to-green-600 hover:from-blue-700 hover:to-green-700 text-white font-semibold py-3 rounded-lg transition duration-300 shadow-lg"
         >
           Submit
         </button>

@@ -20,7 +20,7 @@ export default function Home() {
             <HyperText>Periyar University Symposium2k25</HyperText>
           </h1>
           <h1 className="text-xl font-extrabold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
-            From Comz Department
+            From Computer Science Department
           </h1>
           <Timer />
         </div>

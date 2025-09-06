@@ -1,24 +1,13 @@
 import Image from "next/image";
+import { User } from "lucide-react";
 import ParticlesBackground from "../_componets/ParticlesBackground";
 
 export default function Page() {
   const teachers = [
-    {
-      name: "Rathi Priya",
-      image_url: "/robbot.jpg",
-    },
-    {
-      name: "Anitha Kumar",
-      image_url: "/robbot.jpg",
-    },
-    {
-      name: "K. Ramesh",
-      image_url: "/robbot.jpg",
-    },
-    {
-      name: "Priya Sharma",
-      image_url: "/robbot.jpg",
-    },
+    { name: "Rathi Priya", image_url: "/robbot.jpg" },
+    { name: "Anitha Kumar", image_url: "/robbot.jpg" },
+    { name: "K. Ramesh", image_url: "/robbot.jpg" },
+    { name: "Priya Sharma", image_url: "/robbot.jpg" },
   ];
 
   return (
@@ -32,20 +21,26 @@ export default function Page() {
         {teachers.map((teacher, index) => (
           <div
             key={index}
-            className="group relative bg-gray-900/70 border border-gray-700 rounded-2xl p-6 shadow-xl hover:scale-105 transition-transform duration-300 flex flex-col items-center text-center"
+            className={`group relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 border border-gray-700 rounded-2xl p-6 shadow-[0_0_20px_rgba(0,0,0,0.5)] hover:shadow-[0_0_30px_rgba(236,72,153,0.6)] transition-all duration-500 flex flex-col items-center text-center
+              ${index % 2 === 0 ? "animate-slideInLeft" : "animate-slideInRight"}`}
           >
             <div className="relative w-32 h-32 mb-4">
               <Image
                 src={teacher.image_url}
                 alt={teacher.name}
                 fill
-                className="rounded-full object-cover border-4 border-purple-500 group-hover:border-pink-500 transition-colors duration-300"
+                className="rounded-full object-cover border-4 border-purple-500 group-hover:border-pink-500 transition-colors duration-500"
               />
             </div>
+
             <h2 className="text-xl font-bold text-white group-hover:text-pink-400 transition-colors">
               {teacher.name}
             </h2>
-            <p className="text-gray-400 text-sm mt-2">Assistant Professor</p>
+
+            <div className="flex items-center gap-2 mt-2 text-gray-400 text-sm">
+              <User className="w-4 h-4 text-purple-400" />
+              <span>Assistant Professor</span>
+            </div>
           </div>
         ))}
       </div>

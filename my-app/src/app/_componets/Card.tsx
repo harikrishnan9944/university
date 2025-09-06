@@ -74,14 +74,14 @@ export default function Events() {
         <h1 className="text-3xl font-extrabold text-center mb-10 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
           Events
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl px-6">
+        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl px-6">
           {events.map((event, index) => {
             const Icon = event.icon;
             return (
               <Link
                 key={index}
                 href={event.link}
-                className="group bg-gray-900 border border-gray-700 p-4 rounded-xl shadow-lg flex flex-col hover:scale-105 transition-transform duration-300"
+                className="group  hover:shadow-[0_0_30px_rgba(236,72,153,0.6)] bg-gray-900 border border-gray-700 p-4 rounded-xl shadow-lg flex flex-col hover:scale-105 transition-transform duration-300"
               >
                 <Image
                   src={event.image}
