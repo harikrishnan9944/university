@@ -108,3 +108,36 @@ export default function Events() {
     </div>
   );
 }
+
+
+
+
+
+{/* <div class="flex h-screen w-full items-center justify-center bg-white space-x-3">
+<div class="hover:shadow-2xl rounded-4xl">
+    <div class="bg-gray- w-[28em] px-6 py-7 rounded-4xl border border-gray-400 hover:bg-white duration-300 hover:shadow-[0_0_30px_rgba(236,72,153,0.6)]">
+    <p class="text- font-mono text-[15px] ">use case</p>
+    <p class="text-2xl font-semibold">Unlock business value with generative AI</p>
+    <p class="text-sm pt-3">Customers across industries are harnessing generative AI on AWS to boost employee
+      Build and run AI agents in just a few lines of code with Strands Agents
+    </p>
+    <button class=" text-gray-200 hover:duration-300  rounded-full  px-5 py-2 bg-blue-400   text-[16px] mt-24">Explore use case </button>
+  </div>
+</div>
+
+
+<div class="hover:shadow-2xl rounded-4xl">
+    <div class="bg-gray- w-[28em] px-6 py-7 rounded-4xl  hover:bg-white duration-300 hover:shadow-[0_0_30px_rgba(236,72,153,0.6)]"  
+    <p class="text- font-mono text-[15px] ">use case</p>
+    <p class="text-2xl font-semibold">How customers are innovating and scaling with generative AI</p>
+    <p class="text-sm pt-3">Customers across industries are harnessing generative AI on AWS to boost employee
+      Build and run AI agents in just a few lines of code with Strands Agents
+    </p>
+    <button class=" text-gray-200 hover:duration-300  rounded-full  px-5 py-2 bg-blue-400   text-[16px] mt-24">Explore use case </button>
+  </div>
+</div>
+
+</div> */}
+
+
+
